@@ -1,0 +1,178 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: #0b0b0b;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: monospace;
+    overflow: hidden;
+}
+
+/* ===== SCENE ===== */
+.scene {
+    position: relative;
+    width: 300px;
+    height: 420px;
+}
+
+/* ===== CLOUD ===== */
+.cloud {
+    position: relative;
+    width: 220px;
+    height: 70px;
+    background: #aaa;
+    border-radius: 50px;
+    margin: auto;
+    animation: cloudColor 4s infinite alternate;
+}
+
+.cloud span {
+    position: absolute;
+    background: inherit;
+    border-radius: 50%;
+}
+
+.cloud span:nth-child(1) {
+    width: 80px;
+    height: 80px;
+    top: -40px;
+    left: 20px;
+}
+
+.cloud span:nth-child(2) {
+    width: 100px;
+    height: 100px;
+    top: -60px;
+    left: 70px;
+}
+
+.cloud span:nth-child(3) {
+    width: 80px;
+    height: 80px;
+    top: -40px;
+    left: 140px;
+}
+
+@keyframes cloudColor {
+    0% { background: #aaa; }
+    50% { background: #6cf; }
+    100% { background: #9f9; }
+}
+
+/* ===== RAIN ===== */
+.rain {
+    position: relative;
+    height: 300px;
+    overflow: hidden;
+    z-index: 1;
+}
+
+.drop {
+    position: absolute;
+    top: 80px;
+    color: #00ff9c;
+    font-size: 14px;
+    animation: fall linear forwards;
+}
+
+@keyframes fall {
+    to {
+        transform: translateY(320px);
+        opacity: 0;
+    }
+}
+
+/* ===== LOGIN DROP ===== */
+.login-drop {
+    position: absolute;
+    top: 90px;
+    left: 50%;
+    width: 28px;
+    height: 28px;
+    background: #00ff9c;
+    border-radius: 50%;
+    transform: translateX(-50%) scale(0.3);
+    opacity: 0;
+    z-index: 10;
+}
+
+/* Drop + expand */
+.login-drop.active {
+    animation: drop 1s ease forwards,
+               expand 0.6s ease forwards 1s;
+}
+
+@keyframes drop {
+    to {
+        opacity: 1;
+        transform: translate(-50%, 180px) scale(0.5);
+    }
+}
+
+@keyframes expand {
+    to {
+        width: 240px;
+        height: 260px;
+        border-radius: 16px;
+        background: #111;
+        transform: translate(-50%, 180px) scale(1);
+        box-shadow: 0 0 30px rgba(0,255,156,0.6);
+    }
+}
+
+/* ===== FORM ===== */
+.login-form {
+    display: none;
+    height: 100%;
+    padding: 20px;
+    color: white;
+}
+
+.login-drop.active .login-form {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+}
+
+.login-form h3 {
+    text-align: center;
+}
+
+.login-form input {
+    padding: 10px;
+    border-radius: 6px;
+    border: none;
+    outline: none;
+}
+
+.login-form button {
+    padding: 10px;
+    background: #00ff9c;
+    border: none;
+    border-radius: 6px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+/* ===== FLASH ===== */
+.flash {
+    position: fixed;
+    inset: 0;
+    background: white;
+    opacity: 0;
+    pointer-events: none;
+}
+
+.flash.active {
+    animation: flash 0.15s ease;
+}
+
+@keyframes flash {
+    50% { opacity: 0.8; }
+}

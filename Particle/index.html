@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div id="ui">
+        <div class="control">
+            <button onclick="initAudio()">Start Audio</button>
+        </div>
+        <div class="control">
+            <label>Particle Speed: <input type="range" id="speed" min="1" max="200" value="100"></label>
+        </div>
+        <div class="control">
+            <label>Energy Level: <input type="range" id="energy" min="1" max="100" value="50"></label>
+        </div>
+        <div class="control">
+            <label>Power: <input type="range" id="power" min="1" max="100" value="75"></label>
+        </div>
+        <div class="control">
+            <button onclick="addParticle()">Add Particle</button>
+            <button onclick="addDarkMatter()">Add Dark Matter</button>
+        </div>
+        <div>Particles: <span id="particleCount">0</span></div>
+    </div>
+    <div id="matrix"></div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>

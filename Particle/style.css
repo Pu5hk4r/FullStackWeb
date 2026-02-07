@@ -1,0 +1,62 @@
+/* Global Styles */
+body {
+    margin: 0;
+    overflow: hidden;
+    background: #000;
+    padding: 2rem;
+    font-family: -apple-system, BlinkMacSystemFont, "Arial", sans-serif;
+}
+
+h1 {
+    font-size: 16px;
+    margin-top: 0;
+}
+
+p {
+    color: rgb(107, 114, 128);
+    font-size: 15px;
+    margin-bottom: 10px;
+    margin-top: 5px;
+}
+
+/* UI Styles */
+#ui {
+    position: fixed;
+    top: 10px;
+    left: 10px;
+    color: #0f0;
+    background: rgba(0, 20, 0, 0.7);
+    padding: 15px;
+    border: 1px solid #0f0;
+    font-family: monospace;
+    z-index: 100;
+}
+
+.control {
+    margin: 10px 0;
+}
+
+/* Matrix Styles */
+#matrix {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    color: #0f0;
+    font-family: monospace;
+    font-size: 12px;
+    opacity: 0.2;
+}
+
+/* Card Styles */
+.card {
+    max-width: 620px;
+    margin: 0 auto;
+    padding: 16px;
+    border: 1px solid lightgray;
+    border-radius: 16px;
+}
+
+.card p:last-child {
+    margin-bottom: 0;
+}
