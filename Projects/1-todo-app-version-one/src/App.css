@@ -1,0 +1,26 @@
+h1 {
+
+    font-weight: 700;
+    font-size: 40px;
+    margin: 10px;
+    margin-bottom: 25px;
+}
+
+input {
+    width: 100%;
+}
+
+.items-container {
+    text-align: left;
+}
+
+.p-button {
+
+    width: 80px;
+
+
+}
+
+.prow {
+    margin: 10px 5px;
+}
